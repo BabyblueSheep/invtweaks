@@ -4,9 +4,12 @@
   "package": "net.babybluesheep.invtweaks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "InventoryMixin",
+    "ItemEntityMixin",
+    "ItemMixin",
+    "ItemSettingsMixin"
   ],
   "client": [
-
   ],
   "injectors": {
     "defaultRequire": 1
