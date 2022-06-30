@@ -4,6 +4,8 @@
   "package": "net.babybluesheep.invtweaks.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BundleAccessor",
+    "BundleMixin",
     "InventoryMixin",
     "ItemEntityMixin",
     "ItemMixin",
