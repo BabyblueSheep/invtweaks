@@ -1,5 +1,6 @@
 package net.babybluesheep.invtweaks.mixin;
 
+import net.babybluesheep.invtweaks.InvConfig;
 import net.minecraft.inventory.Inventory;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -12,8 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Inventory.class)
 public interface InventoryMixin {
     @Inject(method = "getMaxCountPerStack()I", at = @At("HEAD"), cancellable = true)
-    private  void maxCountMixin(CallbackInfoReturnable<Integer> cir) {
+    private  void changeSize(CallbackInfoReturnable<Integer> cir) {
 
-        cir.setReturnValue(99);
+        cir.setReturnValue(InvConfig.getConfig().stackLimit);
     }
 }

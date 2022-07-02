@@ -9,7 +9,9 @@
     "InventoryMixin",
     "ItemEntityMixin",
     "ItemMixin",
+    "ItemRendererMixin",
     "ItemSettingsMixin",
+    "ItemStackMixin",
     "ServerPlayNetworkHandlerMixin"
   ],
   "client": [

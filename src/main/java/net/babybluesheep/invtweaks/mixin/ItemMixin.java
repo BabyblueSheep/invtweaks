@@ -1,5 +1,6 @@
 package net.babybluesheep.invtweaks.mixin;
 
+import net.babybluesheep.invtweaks.InvConfig;
 import net.minecraft.item.Item;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,8 +17,9 @@ public class ItemMixin {
     @Final
     static int DEFAULT_MAX_COUNT;
 
+
     @Inject(method = "<init>(Lnet/minecraft/item/Item$Settings;)V", at = @At("TAIL"))
-    private void initMixin(Item.Settings settings, CallbackInfo ci) {
-        DEFAULT_MAX_COUNT = 99;
+    private void changeSize(Item.Settings settings, CallbackInfo ci) {
+        DEFAULT_MAX_COUNT = InvConfig.getConfig().stackLimit;
     }
 }

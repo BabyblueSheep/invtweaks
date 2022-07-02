@@ -1,5 +1,6 @@
 package net.babybluesheep.invtweaks.mixin;
 
+import net.babybluesheep.invtweaks.InvConfig;
 import net.minecraft.item.Item;
 import org.checkerframework.checker.units.qual.C;
 import org.spongepowered.asm.mixin.Final;
@@ -16,8 +17,9 @@ public class ItemSettingsMixin {
     @Shadow
     int maxCount;
 
+
     @Inject(method = "<init>()V", at = @At("TAIL"))
-    private void initMixin(CallbackInfo ci) {
-        this.maxCount = 99;
+    private void changeSize(CallbackInfo ci) {
+        this.maxCount = InvConfig.getConfig().stackLimit;
     }
 }
