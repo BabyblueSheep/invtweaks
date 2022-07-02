@@ -21,6 +21,9 @@
     "main": [
       "net.babybluesheep.invtweaks.InvTweaksMod"
     ],
+    "client": [
+      "net.babybluesheep.invtweaks.InvTweaksClient"
+    ],
     "modmenu": [
       "net.babybluesheep.invtweaks.InvModMenuImplementation"
     ]
