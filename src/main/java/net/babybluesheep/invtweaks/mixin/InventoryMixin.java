@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(Inventory.class)
+@Mixin(value = Inventory.class, priority = 800)
 public interface InventoryMixin {
     @Inject(method = "getMaxCountPerStack()I", at = @At("HEAD"), cancellable = true)
     private  void changeSize(CallbackInfoReturnable<Integer> cir) {

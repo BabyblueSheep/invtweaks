@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(targets = "net.minecraft.item.Item$Settings")
+@Mixin(targets = "net.minecraft.item.Item$Settings", priority = 800)
 public class ItemSettingsMixin {
 
     @Shadow

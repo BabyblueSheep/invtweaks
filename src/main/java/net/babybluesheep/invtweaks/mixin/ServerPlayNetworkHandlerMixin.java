@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(ServerPlayNetworkHandler.class)
+@Mixin(value = ServerPlayNetworkHandler.class, priority = 800)
 public class ServerPlayNetworkHandlerMixin {
     @ModifyConstant(method = "onCreativeInventoryAction", constant = @Constant(intValue = 64))
     private int fixDesync(int original) {

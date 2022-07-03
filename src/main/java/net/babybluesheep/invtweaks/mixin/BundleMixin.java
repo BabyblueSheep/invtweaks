@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 
-@Mixin(BundleItem.class)
+@Mixin(value = BundleItem.class, priority = 800)
 public class BundleMixin {
     @Shadow
     @Final
